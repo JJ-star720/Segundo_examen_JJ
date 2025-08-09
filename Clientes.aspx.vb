@@ -48,7 +48,7 @@ Public Class Clientes
 
         If index >= 0 Then
             Dim row = GvClientes.Rows(index)
-            Dim Prodcus As New Persona With {
+            Dim Cliedcus As New Persona With {
                 .Nombre = row.Cells(2).Text,
                 .Apellido = row.Cells(3).Text,
                 .Edad = row.Cells(4).Text,
@@ -59,8 +59,15 @@ Public Class Clientes
             IdClientet = row.Cells(1).Text
 
             ' Asignar los valores de las celdas a los controles del formulario
-            TxtNombre.Text = Prodcus.Nombre
+            TxtNombre.Text = Cliedcus.Nombre
 
+            If row.Cells(3).Text.IsNullOrWhiteSpace Then
+                Txtapellido.Text = ""
+            Else
+                Txtapellido.Text = Cliedcus.Apellido
+            End If
+
+            Txttelefono.Text = Cliedcus.Telefono
 
         End If
     End Sub
@@ -72,5 +79,15 @@ Public Class Clientes
         LblMensaje.Text = resultado
         e.Cancel = True
         GvClientes.DataBind()
+    End Sub
+
+    Protected Sub btnCancelar_click(sender As Object, e As EventArgs)
+        TxtNombre.Text = ""
+        Txtapellido.Text = ""
+        Txtedad.Text = ""
+        Txtdireccion.Text = ""
+        Txttelefono.Text = ""
+        Txtcorreo.Text = ""
+        GvClientes.SelectedIndex = 0
     End Sub
 End Class
