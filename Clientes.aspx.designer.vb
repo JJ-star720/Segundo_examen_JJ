@@ -50,22 +50,49 @@ Partial Public Class Clientes
     Protected WithEvents TxtNombre As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control TxtPrecio.
+    '''Control Txtapellido.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TxtPrecio As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txtapellido As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control TxtStrock.
+    '''Control Txtedad.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TxtStrock As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Txtedad As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control Txtdireccion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Txtdireccion As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control Txttelefono.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Txttelefono As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control Txtcorreo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Txtcorreo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control btnGuardar.

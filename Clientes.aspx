@@ -13,7 +13,7 @@
        <Columns>
           <asp:CommandField ShowSelectButton="True"></asp:CommandField>
           <asp:BoundField DataField="clienteID" HeaderText="ClienteID" InsertVisible="False" ReadOnly="True" SortExpression="ClienteID" />
-          <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+          <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
           <asp:BoundField DataField="apellido" HeaderText="apellido" SortExpression="apellido" />
           <asp:BoundField DataField="edad" HeaderText="edad" SortExpression="edad" />
           <asp:BoundField DataField="dirreccion" HeaderText="dirreccion" SortExpression="dirreccion" />
@@ -23,25 +23,40 @@
        </Columns>
      </asp:GridView>
 
-   <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:conexionFR %>"
-    SelectCommand="SELECT * FROM [Productos]">
+   <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:Conexion %>"
+    SelectCommand="SELECT * FROM [Clientes]">
    </asp:SqlDataSource>
 
         <h3>Formulario</h3>
 
        <div class="form-group mb-3">
-            <label for="TxtNombre">Nombre</label>
+            <label for="TxtNombre">nombre</label>
             <asp:TextBox ID="TxtNombre" runat="server" CssClass="form-control"></asp:TextBox>
        </div>
 
         <div class="form-group mb-3">
-             <label for="TxtPrecio">precio</label>
-             <asp:TextBox TextMode="Number" ID="TxtPrecio" runat="server" CssClass="form-control"></asp:TextBox>
+             <label for="Txtapellido">apellido</label>
+             <asp:TextBox TextMode="Number" ID="Txtapellido" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
 
         <div class="form-group mb-3">
-            <label for="TxtStrock">strock</label>
-            <asp:TextBox ID="TxtStrock" runat="server" CssClass="form-control"></asp:TextBox>
+            <label for="Txtedad">edad</label>
+            <asp:TextBox ID="Txtedad" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+
+        <div class="form-group mb-3">
+           <label for="Txtdirreccion">dirreccion</label>
+           <asp:TextBox ID="Txtdireccion" runat="server" CssClass="form-control"></asp:TextBox>
+       </div>
+
+        <div class="form-group mb-3">
+           <label for="Txttelefono">telefono</label>
+           <asp:TextBox ID="Txttelefono" runat="server" CssClass="form-control"></asp:TextBox>
+       </div>
+
+        <div class="form-group mb-3">
+          <label for="Txtcorreo">correo</label>
+          <asp:TextBox ID="Txtcorreo" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
 
         <div class="form-group">
