@@ -40,9 +40,9 @@ Public Class Login
 
     End Function
 
-    Protected Sub btnLogin_Click(sender As Object, e As EventArgs)
 
 
+    Protected Sub btnLogin_Click1(sender As Object, e As EventArgs)
         Dim usuario As New Usuario() With {
             .Email = txtEmail.Text,
             .Password = txtContraseña.Text
@@ -56,11 +56,5 @@ Public Class Login
             lblError.Text = "Correo electrónico o contraseña inválidos."
             lblError.Visible = True
         End If
-
-
-    End Sub
-
-    Protected Sub btnLogin_Click1(sender As Object, e As EventArgs)
-
     End Sub
 End Class
