@@ -4,15 +4,15 @@ Public Class ClienteRepository
 
     Public Function createCliente(cliente As Cliente) As String
         Try
-            Dim query As String = "INSERT INTO Clientes (Nombre, Apellido, Edad, Direccion, Telefono, Email) 
-            VALUES (@Nombre, @Apellido, @Edad, @Direccion, @Telefono, @Email )"
+            Dim query As String = "INSERT INTO Clientes (Nombre, Apellido, Edad, Direccion, Telefono, Correo) 
+            VALUES (@Nombre, @Apellido, @Edad, @Direccion, @Telefono, @Correo )"
             Dim parameters As New List(Of SqlParameter) From {
                 New SqlParameter("@Nombre", cliente.Nombre),
                 New SqlParameter("@Apellido", cliente.Apellido),
                 New SqlParameter("@Edad", cliente.Edad),
-                New SqlParameter("@Direccion", cliente.Dirreccion),
+                New SqlParameter("@Direccion", cliente.Direccion),
                 New SqlParameter("@Telefono", cliente.Telefono),
-                New SqlParameter("@Email", cliente.Correo)
+                New SqlParameter("@Correo", cliente.Correo)
             }
             Using connection As New SqlConnection(connectionString)
                 Using command As New SqlCommand(query, connection)
@@ -55,15 +55,15 @@ Public Class ClienteRepository
         Try
             Dim query As String = "UPDATE Clientes SET Nombre = @Nombre,
             Apellido = @Apellido, Edad = @Edad, Direccion = @Direccion, 
-            Telefono = @Telefono, Email = @Email WHERE ClienteID = @Id"
+            Telefono = @Telefono, Correo = @Correo WHERE ClienteID = @Id"
             Dim parameters As New List(Of SqlParameter) From {
                 New SqlParameter("@Id", id),
                 New SqlParameter("@Nombre", cliente.Nombre),
                 New SqlParameter("@Apellido", cliente.Apellido),
                 New SqlParameter("@Edad", cliente.Edad),
-                New SqlParameter("@Direccion", cliente.Dirreccion),
+                New SqlParameter("@Direccion", cliente.Direccion),
                 New SqlParameter("@Telefono", cliente.Telefono),
-                New SqlParameter("@Email", cliente.Correo)
+                New SqlParameter("@Correo", cliente.Correo)
             }
             Using connection As New SqlConnection(connectionString)
                 Using command As New SqlCommand(query, connection)

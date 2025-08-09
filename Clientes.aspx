@@ -16,7 +16,7 @@
           <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
           <asp:BoundField DataField="apellido" HeaderText="apellido" SortExpression="apellido" />
           <asp:BoundField DataField="edad" HeaderText="edad" SortExpression="edad" />
-          <asp:BoundField DataField="dirreccion" HeaderText="dirreccion" SortExpression="dirreccion" />
+          <asp:BoundField DataField="direccion" HeaderText="direccion" SortExpression="direccion" />
           <asp:BoundField DataField="telefono" HeaderText="telefono" SortExpression="telefono" />
           <asp:BoundField DataField="correo" HeaderText="correo" SortExpression="correo" />
           <asp:CommandField ShowDeleteButton="True" />
@@ -36,16 +36,16 @@
 
         <div class="form-group mb-3">
              <label for="Txtapellido">apellido</label>
-             <asp:TextBox TextMode="Number" ID="Txtapellido" runat="server" CssClass="form-control"></asp:TextBox>
+             <asp:TextBox ID="Txtapellido" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
 
         <div class="form-group mb-3">
             <label for="Txtedad">edad</label>
-            <asp:TextBox ID="Txtedad" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox TextMode="Number" ID="Txtedad" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
 
         <div class="form-group mb-3">
-           <label for="Txtdirreccion">dirreccion</label>
+           <label for="Txtdireccion">direccion</label>
            <asp:TextBox ID="Txtdireccion" runat="server" CssClass="form-control"></asp:TextBox>
        </div>
 

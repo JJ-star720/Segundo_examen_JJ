@@ -9,29 +9,34 @@ Public Class Clientes
 
     Protected Sub btnGuardar_click(sender As Object, e As EventArgs)
         If IDClients.Value.IsNullOrWhiteSpace Then
-            If TxtNombre.Text And Txtapellido.Text And Txttelefono.Text = "" Then
-                LblMensaje.Text = "El campo es obligatorio"
+            If TxtNombre.Text = "" Then
+                LblMensaje.Text = "EL campo NOMBRE son obligatorio"
+
+            ElseIf Txtapellido.Text = "" Then
+                LblMensaje.Text = "EL campo  APELLIDO son obligatorio"
+            ElseIf Txttelefono.Text = "" Then
+                LblMensaje.Text = "EL campo  TELEFONO son obligatorio"
             Else
-                Dim person As New Persona() With {
+                Dim person As New Cliente() With {
                     .Nombre = TxtNombre.Text,
                     .Apellido = Txtapellido.Text,
                     .Edad = Conversion.Val(Txtedad.Text),
-                    .Dirreccion = Txtdireccion.Text,
+                    .Direccion = Txtdireccion.Text,
                     .Telefono = Conversion.Val(Txttelefono.Text),
                     .Correo = Txtcorreo.Text
                 }
-                Dim resultado As String = dbClientrepo.createCliente(person)
-                LblMensaje.Text = resultado
+                dbClientrepo.createCliente(person)
+                LblMensaje.Text = "Cliente creado correctamente"
                 GvClientes.DataBind()
             End If
         Else
 
-            Dim newcliente As New Persona() With {
+            Dim newcliente As New Cliente() With {
                 .Nombre = TxtNombre.Text,
                 .Apellido = Txtapellido.Text,
-                .Edad = Decimal.Parse(Txtedad.Text),
-                .Dirreccion = Txtdireccion.Text,
-                .Telefono = Decimal.Parse(Txttelefono.Text),
+                .Edad = Convert.ToInt32(Txtedad.Text),
+                .Direccion = Txtdireccion.Text,
+                .Telefono = Convert.ToInt32(Txttelefono.Text),
                 .Correo = Txtcorreo.Text
             }
             Dim resultado As String = dbClientrepo.UpdateClientes(IDClients.Value, newcliente)
@@ -48,11 +53,11 @@ Public Class Clientes
 
         If index >= 0 Then
             Dim row = GvClientes.Rows(index)
-            Dim Cliedcus As New Persona With {
+            Dim Cliedcus As New Cliente With {
                 .Nombre = row.Cells(2).Text,
                 .Apellido = row.Cells(3).Text,
                 .Edad = row.Cells(4).Text,
-                .Dirreccion = row.Cells(5).Text,
+                .Direccion = row.Cells(5).Text,
                 .Telefono = row.Cells(6).Text,
                 .Correo = row.Cells(7).Text
             }
