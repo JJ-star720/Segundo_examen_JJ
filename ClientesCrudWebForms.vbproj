@@ -230,6 +230,7 @@
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="DAL\ClienteRepository.vb" />
     <Compile Include="DAL\DatabaseHelper %281%29.vb" />
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>

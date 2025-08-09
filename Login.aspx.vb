@@ -50,7 +50,7 @@ Public Class Login
 
         ' Validar el usuario
         If usuario.Validar And VerificarUsuario(usuario) Then
-            Response.Redirect("Home.aspx")
+            Response.Redirect("Clientes.aspx")
         Else
 
             lblError.Text = "Correo electrónico o contraseña inválidos."
@@ -60,4 +60,7 @@ Public Class Login
 
     End Sub
 
+    Protected Sub btnLogin_Click1(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

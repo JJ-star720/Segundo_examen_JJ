@@ -21,7 +21,7 @@
                 Recordar 
             </label>
         </div>
-        <asp:Button CssClass="btn btn-primary w-100 py-2" ID="btnLogin" runat="server" Text="Acceder" OnClick="btnLogin_Click" />
+        <asp:Button CssClass="btn btn-primary w-100 py-2" ID="btnLogin" runat="server" Text="Acceder" OnClick="btnLogin_Click1" />
     </main>
 </div>
 <a href="Registro.aspx">¿Primera vez que ingresa?</a>
