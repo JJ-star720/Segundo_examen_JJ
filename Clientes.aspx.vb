@@ -53,6 +53,7 @@ Public Class Clientes
 
         If index >= 0 Then
             Dim row = GvClientes.Rows(index)
+            IDClients.Value = IdClientet.ToString()
             Dim Cliedcus As New Cliente With {
                 .Nombre = row.Cells(2).Text,
                 .Apellido = row.Cells(3).Text,
@@ -61,7 +62,7 @@ Public Class Clientes
                 .Telefono = row.Cells(6).Text,
                 .Correo = row.Cells(7).Text
             }
-            IdClientet = row.Cells(1).Text
+
 
             ' Asignar los valores de las celdas a los controles del formulario
             TxtNombre.Text = Cliedcus.Nombre
