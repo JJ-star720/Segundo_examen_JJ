@@ -19,7 +19,7 @@ Public Class DatabaseHelper
     End Function
 
     ' Método para ejecutar un comando SQL (INSERT, UPDATE, DELETE)
-    Public Sub ExecuteNonQuery(query As String, Optional parameters As List(Of SqlParameter) = Nothing, Optional isStoredProcedure As Boolean = False)
+    Public Function ExecuteNonQuery(query As String, Optional parameters As List(Of SqlParameter) = Nothing, Optional isStoredProcedure As Boolean = False) As Boolean
         If String.IsNullOrWhiteSpace(query) Then
             Throw New ArgumentException("La consulta no puede estar vacía.")
         End If
@@ -34,13 +34,15 @@ Public Class DatabaseHelper
                 End If
                 Try
                     cmd.ExecuteNonQuery()
+                    Return True
                 Catch ex As Exception
                     LogError(ex, query) ' Registrar el error en caso de excepción
                     Throw New Exception("Error al ejecutar el comando: " & ex.Message)
+                    Return True
                 End Try
             End Using
         End Using
-    End Sub
+    End Function
 
     ' Método para ejecutar una consulta SQL y devolver un DataTable
     Public Function ExecuteQuery(query As String, Optional parameters As List(Of SqlParameter) = Nothing, Optional isStoredProcedure As Boolean = False) As DataTable
